@@ -3,7 +3,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import session from "express-session";
 import connectDB from "./config/db.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -23,32 +22,17 @@ connectDB();
 
 const app = express();
 
-// ✅ CORS: allow frontend origin (set FRONTEND_URL in .env for production)
+// ✅ CORS (allow all origins for API-only backend)
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: "*",
     credentials: true,
   })
 );
 
 // ✅ Middleware
-app.use(cookieParser()); // parse cookies
-app.use(express.json()); // parse JSON bodies
-
-// ✅ Session (⚠️ MemoryStore is not for production)
-// Use Redis/Mongo store if scaling beyond dev/demo
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "secret123",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: false, // Render health checks use HTTP, not HTTPS
-      httpOnly: true,
-      sameSite: "lax",
-    },
-  })
-);
+app.use(cookieParser());
+app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -69,6 +53,6 @@ app.get("/", (req, res) => {
   res.send("✅ API is running...");
 });
 
-// ✅ Use Render’s provided PORT
+// ✅ Use PORT from .env (Render will override if needed)
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
