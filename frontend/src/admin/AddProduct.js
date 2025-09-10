@@ -8,7 +8,7 @@ export default function AddOrEditProduct() {
   const nav = useNavigate();
   const location = useLocation();
   const id = location.state?.id; // ✅ Get id from state
-  const BASE_URL = "http://localhost:9000";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
 
   const [form, setForm] = useState({
     name: "",
@@ -44,7 +44,7 @@ export default function AddOrEditProduct() {
         setError(err.message);
       }
     })();
-  }, [id]);
+  }, [id,BASE_URL]);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];

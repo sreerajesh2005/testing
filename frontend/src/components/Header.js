@@ -9,10 +9,11 @@ import { FaHome, FaShoppingCart, FaUserCircle, FaSignInAlt, FaStore } from "reac
 function Header() {
   const [user, setUser] = useState(null);
   const [cart, setCart] = useState([]);
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/api/auth/me", {
+      const res = await axios.get(`${BASE_URL}/api/auth/me`, {
         withCredentials: true,
       });
       if (res.data) {

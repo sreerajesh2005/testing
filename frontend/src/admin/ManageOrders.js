@@ -6,9 +6,11 @@ import "../styles/ManageOrders.css";
 
 export default function ManageOrders() {
   const [rows, setRows] = useState([]);
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
+
 
   const load = async () => {
-    const res = await fetch("http://localhost:9000/api/orders/admin", {
+    const res = await fetch(`${BASE_URL}/api/orders/admin`, {
       credentials: "include",
     });
     const data = await res.json();
@@ -17,7 +19,7 @@ export default function ManageOrders() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, [BASE_URL]);
 
   const columns = [
     { key: "_id", label: "Order ID" },

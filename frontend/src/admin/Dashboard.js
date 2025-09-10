@@ -8,7 +8,8 @@ export default function Dashboard() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterStatus, setFilterStatus] = useState("All");
-  const BASE_URL = "http://localhost:9000";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
+
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -24,7 +25,7 @@ export default function Dashboard() {
       }
     };
     fetchOrders();
-  }, []);
+  }, [BASE_URL]);
 
   const revenue = orders.reduce(
     (sum, o) => sum + ((o.totals && o.totals.total) || 0),

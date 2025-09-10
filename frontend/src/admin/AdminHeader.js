@@ -3,13 +3,14 @@ import "../styles/AdminHeader.css"; // make sure the file is in the same folder
 
 export default function AdminHeader() {
   const [user, setUser] = useState(null);
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
 
   useEffect(() => {
-    fetch("http://localhost:9000/api/auth/me")
+    fetch(`${BASE_URL}/api/auth/me`)
       .then((r) => r.json())
       .then((d) => setUser(d.user || d))
       .catch(() => setUser(null));
-  }, []);
+  }, [BASE_URL]);
 
   return (
     <header className="admin-header">

@@ -29,7 +29,7 @@ export default function ProfilePage() {
   const [showAddressForm, setShowAddressForm] = useState(false);
 
   const navigate = useNavigate();
-  const BASE_URL = "http://localhost:9000";
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
 
   useEffect(() => {
     const fetchUser = async () => {

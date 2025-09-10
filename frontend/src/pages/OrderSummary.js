@@ -16,7 +16,7 @@ export default function OrderSummary() {
   const productId = query.get("productId");
   const qty = query.get("qty") || 1;
   const addressId = query.get("addressId");
-  const BASE_URL = "http://localhost:9000";
+ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
 
   useEffect(() => {
     const fetchData = async () => {

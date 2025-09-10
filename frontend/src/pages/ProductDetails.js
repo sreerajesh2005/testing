@@ -10,7 +10,7 @@ export default function ProductDetails() {
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
 
-  const BASE_URL = "http://localhost:9000"; // backend URL
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";// backend URL
 
   useEffect(() => {
     const load = async () => {

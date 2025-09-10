@@ -33,6 +33,8 @@ export default function Home() {
       ctaLink: "/shipping"
     }
   ];
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
+
 
   useEffect(() => {
     const fetchFeatured = async () => {
@@ -40,7 +42,7 @@ export default function Home() {
         setLoading(true);
         setError("");
 
-        const res = await fetch("http://localhost:9000/api/products?limit=4", {
+        const res = await fetch(`${BASE_URL}/api/products?limit=4`, {
           credentials: "include",
         });
 

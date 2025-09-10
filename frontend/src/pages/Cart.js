@@ -5,7 +5,8 @@ import "../styles/Cart.css";
 
 export default function Cart() {
   const [items, setItems] = useState([]);
-  const BASE_URL = "http://localhost:9000";
+const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
+
   const navigate = useNavigate();
 
   // Normalize image URL

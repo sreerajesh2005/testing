@@ -7,14 +7,14 @@ export default function ProductList() {
   const [cat, setCat] = useState("All");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
   useEffect(() => {
     const load = async () => {
       try {
         setLoading(true);
         setError("");
 
-        const res = await fetch("http://localhost:9000/api/products");
+        const res = await fetch(`${BASE_URL}/api/products`);
         const data = await res.json();
 
         if (!res.ok) throw new Error(data.message || "Failed to load products");
