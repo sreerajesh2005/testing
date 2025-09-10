@@ -14,6 +14,7 @@ import cartRoutes from "./routes/cartRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import addressRoutes from "./routes/addressRoutes.js";
+// import adminAuthRoutes from "./routes/adminAuthRoutes.js"; // enable when ready
 
 dotenv.config();
 
@@ -22,27 +23,29 @@ connectDB();
 
 const app = express();
 
-// 🔹 Enable CORS for frontend
+// ✅ CORS: allow frontend origin (set FRONTEND_URL in .env for production)
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || "http://localhost:3000",
-    credentials: true, // allow cookies
+    credentials: true,
   })
 );
 
-// 🔹 Middleware
-app.use(cookieParser());
-app.use(express.json());
+// ✅ Middleware
+app.use(cookieParser()); // parse cookies
+app.use(express.json()); // parse JSON bodies
 
-// 🔹 Session middleware (only if you’re actually using sessions)
+// ✅ Session (⚠️ MemoryStore is not for production)
+// Use Redis/Mongo store if scaling beyond dev/demo
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "secret123",
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: process.env.NODE_ENV === "production", // only secure in production
+      secure: false, // Render health checks use HTTP, not HTTPS
       httpOnly: true,
+      sameSite: "lax",
     },
   })
 );
@@ -50,29 +53,22 @@ app.use(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 🔹 Serve static uploads
+// ✅ Serve static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// 🔹 API Routes
+// ✅ API Routes
 app.use("/api/address", addressRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/auth", userRoutes);
+// app.use("/api/admin", adminAuthRoutes); // enable when admin routes ready
 
-// ✅ Root route
+// ✅ Health check / root
 app.get("/", (req, res) => {
   res.send("✅ API is running...");
 });
 
-// ✅ Production: Serve frontend build (if deploying both frontend + backend together)
-if (process.env.NODE_ENV === "production") {
-  const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-  );
-}
-
+// ✅ Use Render’s provided PORT
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
