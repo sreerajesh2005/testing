@@ -1,0 +1,83 @@
+/* ===== Modern Footer ===== */
+.footer {
+  background: linear-gradient(135deg, #000000, #000000);
+  color: #f3f4f6;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Footer Sections */
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #f3f4f6;
+  margin: 0 12px;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 0 0 6px #ffc107;
+}
+
+/* Footer Text */
+.footer p {
+  font-size: 0.85rem;
+  color: #cfd3f1;
+  margin: 0;
+}
+
+/* Decorative Glow Circles */
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.footer::before {
+  width: 120px;
+  height: 120px;
+  background: #000000;
+  top: -30px;
+  left: -30px;
+}
+
+.footer::after {
+  width: 180px;
+  height: 180px;
+  background: #08080a;
+  bottom: -60px;
+  right: -60px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .social-icons a {
+    margin: 0 8px;
+    font-size: 1.2rem;
+  }
+
+  .footer .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

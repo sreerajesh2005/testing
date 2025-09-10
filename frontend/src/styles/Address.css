@@ -1,0 +1,144 @@
+/* ===== Address Container ===== */
+.address-container {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Address Card ===== */
+.address-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.address-box:hover {
+  border-color: #6366f1;
+  box-shadow: 0 6px 14px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.address-box.selected {
+  border: 2px solid #6366f1;
+  background: #eef2ff;
+}
+
+/* ===== Buttons ===== */
+.address-box .btn-warning,
+.address-box .btn-edit,
+.address-box .btn-delete {
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.25s ease;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Deliver */
+.address-box .btn-warning {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+}
+.address-box .btn-warning:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+}
+
+/* Edit */
+.address-box .btn-edit {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+.address-box .btn-edit:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* Delete */
+.address-box .btn-delete {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+}
+.address-box .btn-delete:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+}
+
+/* ===== Add New Address ===== */
+.btn-outline-primary {
+  border: 2px dashed #6366f1;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: transparent;
+  color: #6366f1;
+  transition: all 0.3s ease;
+}
+.btn-outline-primary:hover {
+  background: #6366f1;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== Address Form ===== */
+.address-form input,
+.address-form select {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+.address-form input:focus,
+.address-form select:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+.address-form button {
+  padding: 0.8rem 1.2rem;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 768px) {
+  .address-box .btn-edit,
+  .address-box .btn-delete {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  .address-box .btn-warning {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .address-box {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .address-box .btn-edit,
+  .address-box .btn-delete,
+  .address-box .btn-warning {
+    width: 100%;
+    margin-top: 8px;
+  }
+}

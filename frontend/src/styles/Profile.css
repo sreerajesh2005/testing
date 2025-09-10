@@ -1,0 +1,315 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* Profile Page Layout */
+.profile-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e6e6e6;
+  padding: 30px 20px;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.btn-tab {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 1rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-tab:hover,
+.btn-tab.active {
+  background-color: #f0f0f0;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.btn-outline-danger {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  background: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-outline-danger:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Main Content */
+.profile-content {
+  flex-grow: 1;
+  padding: 30px 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 260px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h2, h3, h5, h6 {
+  font-weight: 500;
+}
+
+/* Orders */
+.order-card {
+  background-color: #fff;
+  margin-bottom: 18px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.order-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.progress-steps {
+  display: flex;
+  margin-top: 12px;
+  gap: 10px;
+  align-items: center;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.progress-step .circle {
+  width: 18px;
+  height: 18px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.progress-step.active .circle {
+  background-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.cancelled-text {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Buttons inside orders */
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #333;
+}
+
+.btn-outline-danger {
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  background: none;
+}
+
+.btn-outline-danger:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Address Management */
+.address-management {
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.address-card {
+  background-color: #fff;
+  padding: 18px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.address-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.address-form input,
+.address-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.address-form .d-flex {
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.4em;
+  border-color: #1a1a1a transparent transparent transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .btn-tab {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .overview-cards {
+    flex-direction: column;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }
+
+  .progress-steps {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-tab {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .address-form input,
+  .address-form select {
+    font-size: 0.9rem;
+  }
+
+  .order-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

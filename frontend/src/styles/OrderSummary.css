@@ -1,0 +1,111 @@
+/* OrderSummary.css */
+
+/* Container Card */
+.card {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h5 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+/* Product Section */
+.d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.d-flex.align-items-center img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 15px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Text styles */
+strong {
+  color: #000;
+}
+
+.text-danger {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+/* Price Details */
+p strong {
+  font-size: 1.1rem;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .d-flex.align-items-center {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .d-flex.align-items-center img {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .card {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  button.btn-success {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px;
+    margin: 10px;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .d-flex.align-items-center img {
+    width: 70px;
+    height: 70px;
+  }
+}

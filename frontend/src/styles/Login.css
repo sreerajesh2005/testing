@@ -1,0 +1,103 @@
+/* ===== Modern Login Page ===== */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Floating gradient shapes */
+.login-page::before,
+.login-page::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.login-page::before {
+  width: 300px;
+  height: 300px;
+  background: #ffffff;
+  top: -100px;
+  left: -80px;
+}
+
+.login-page::after {
+  width: 200px;
+  height: 200px;
+  background: #ffcc00;
+  bottom: -80px;
+  right: -60px;
+}
+
+/* Card */
+.login-page .card {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-page .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs */
+.login-page input {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-page input:focus {
+  border-color: #6610f2;
+  box-shadow: 0 0 8px rgba(102, 16, 242, 0.3);
+  outline: none;
+}
+
+/* Button */
+.login-page button {
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #6610f2, #007bff);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-page button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #007bff, #6610f2);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .login-page .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-page input,
+  .login-page button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

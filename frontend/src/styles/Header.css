@@ -1,0 +1,146 @@
+/* ===== Modern Navbar ===== */
+.header-navbar {
+  background: linear-gradient(135deg, #000000, #202020);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+/* Brand */
+/* ===== Navbar Brand Modern ===== */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #303030, #ffffff, #ececec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* Hover Animation */
+.navbar-brand:hover {
+  letter-spacing: 2px;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(132, 94, 194, 0.4),
+               0 0 20px rgba(255, 111, 145, 0.3);
+}
+
+/* Subtle underline effect */
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(135deg, #ffffff, #9c9c9c);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+}
+
+
+/* Navigation Links */
+.nav-link {
+  color: #fff !important;
+  margin: 0 0.75rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #ffc107;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Cart Icon & Count */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  font-size: 0.75rem;
+  background: #ef4444;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0%;
+  padding: 2px 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+.cart-count:hover {
+  transform: scale(1.1);
+}
+
+/* Outline Buttons */
+.btn-outline-light {
+  font-size: 0.85rem;
+  margin-left: 0.75rem;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #01016c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    margin: 0.3rem 0;
+    text-align: center;
+  }
+
+  .btn-outline-light {
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+  }
+}

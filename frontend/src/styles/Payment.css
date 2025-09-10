@@ -1,0 +1,97 @@
+/* Payment.css */
+
+/* Container styling */
+.payment-container {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* Payment methods (left) */
+.payment-methods {
+  flex: 2;
+}
+
+.payment-methods h5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.payment-section {
+  margin-bottom: 1.5rem;
+}
+
+.payment-section h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.payment-section select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.payment-section button {
+  margin-top: 1rem;
+}
+
+/* Payment summary (right) */
+.payment-summary {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+  background-color: #f8f9fa;
+}
+
+.payment-summary h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.payment-summary p {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .payment-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .payment-methods {
+    margin-bottom: 1.5rem;
+  }
+
+  .payment-summary {
+    width: 100%;
+  }
+
+  .payment-section select {
+    font-size: 0.95rem;
+  }
+
+  .payment-section button {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Optional: hover/focus styles */
+.payment-section select:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.payment-section button:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+  color: #fff;
+}

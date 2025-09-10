@@ -1,0 +1,113 @@
+/* ------------------ Table Container ------------------ */
+.data-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  padding: 0.5rem;
+}
+
+/* ------------------ Table Styling ------------------ */
+.table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* add spacing between rows for card-like effect */
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  min-width: 120px;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+/* Table Header */
+.table th {
+  font-weight: 600;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* Table Rows */
+.table-hover tbody tr {
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.table-hover tbody tr:hover {
+  background: #f0f4ff;
+  transform: translateY(-1px);
+}
+
+/* Cells */
+.table td {
+  font-size: 0.9rem;
+  color: #4b5563;
+  background: #fff;
+}
+
+/* Action Buttons */
+.table td button {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.table td button.edit-btn {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.table td button.edit-btn:hover {
+  background: #4338ca;
+}
+
+.table td button.delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.table td button.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ------------------ Responsive Adjustments ------------------ */
+@media (max-width: 1199px) {
+  .table th,
+  .table td {
+    min-width: 100px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .table td button {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .table th,
+  .table td {
+    font-size: 0.7rem;
+    min-width: 80px;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .table td button {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+  }
+}

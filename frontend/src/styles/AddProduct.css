@@ -1,0 +1,126 @@
+/* =========================
+   Zara Minimalist Theme
+========================= */
+.add-product-container {
+  min-height: 100vh;
+  background: #fafafa; /* soft white */
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar stays as is but keep minimal */
+.col-md-3 {
+  border-right: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+/* Right Content */
+.col-md-9 {
+  background: #fff;
+  padding: 2rem 3rem;
+}
+
+/* Heading */
+.add-product-container h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  color: #111;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+
+/* =========================
+   Form Styling
+========================= */
+.add-product-form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2-column layout */
+  gap: 1.5rem;
+}
+
+.add-product-form input,
+.add-product-form select,
+.add-product-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+  transition: border 0.2s ease;
+}
+
+.add-product-form input:focus,
+.add-product-form select:focus,
+.add-product-form textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Full-width fields */
+.add-product-form textarea,
+.add-product-form .img-upload,
+.add-product-form button {
+  grid-column: span 2;
+}
+
+/* =========================
+   Image Preview
+========================= */
+.img-thumbnail {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* =========================
+   Button
+========================= */
+.btn-success {
+  background: #111;
+  border: none;
+  border-radius: 0;
+  padding: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .add-product-form {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+
+  .col-md-9 {
+    padding: 1.5rem;
+  }
+
+  .add-product-container h4 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+}
+

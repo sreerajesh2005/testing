@@ -1,0 +1,134 @@
+/* 🌟 Modern Checkout Page Styling */
+.checkout-page {
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background: #f5f7fa;
+  min-height: 85vh;
+}
+
+/* Form Card */
+.checkout-form {
+  flex: 1;
+  min-width: 320px;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Summary Card */
+.checkout-summary {
+  flex: 0.4;
+  min-width: 280px;
+  border-radius: 16px;
+  background: #fdfdfd;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Titles */
+.checkout-form h5,
+.checkout-summary h5 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #222;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+/* Input Fields */
+.checkout-form input,
+.checkout-form select {
+  border: 1px solid #e3e6eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  width: 100%;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus {
+  border-color: #4a6cf7;
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.2);
+  outline: none;
+}
+
+/* Payment Options */
+.checkout-form .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.checkout-form .form-check-input {
+  accent-color: #4a6cf7;
+}
+
+.checkout-form .form-check-label {
+  margin-left: 10px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Buttons */
+.checkout-form button {
+  display: inline-block;
+  width: 100%;
+  background: linear-gradient(135deg, #4a6cf7, #6c8efc);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.checkout-form button:hover {
+  background: linear-gradient(135deg, #3a59d6, #5b7af5);
+  transform: translateY(-2px);
+}
+
+/* Summary details */
+.checkout-summary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.checkout-summary .total {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .checkout-page {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

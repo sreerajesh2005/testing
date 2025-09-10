@@ -1,0 +1,69 @@
+/* ===== Admin Header ===== */
+.admin-header {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.admin-header:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== Title ===== */
+.admin-title {
+  font-weight: 700;
+  color: #1e1b4b;
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
+}
+
+/* ===== User Info ===== */
+.admin-user {
+  font-size: 0.95rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+}
+
+/* ===== Avatar ===== */
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.admin-avatar:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 576px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .admin-user {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+  }
+}

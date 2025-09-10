@@ -1,0 +1,84 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* light neutral background */
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Reset some Bootstrap defaults */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+/* =========================
+   Main Content
+========================= */
+main {
+  min-height: 70vh;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e60023; /* subtle accent (H&M style red) */
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn-primary {
+  background-color: #111 !important;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e60023 !important; /* red accent */
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Page Not Found (404)
+========================= */
+.text-center h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* =========================
+   Admin Pages
+========================= */
+.admin-layout {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 2rem;
+}
