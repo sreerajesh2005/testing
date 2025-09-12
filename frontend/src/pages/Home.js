@@ -33,7 +33,7 @@ export default function Home() {
       ctaLink: "/shipping"
     }
   ];
-  const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000";
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL ;
 
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function Home() {
           ? data.products
           : Array.isArray(data)
           ? data
-          : [];
+          : [BASE_URL];
 
         const normalized = arr.map((p) => ({ ...p, id: p._id }));
         setProducts(normalized);
@@ -66,7 +66,7 @@ export default function Home() {
     };
 
     fetchFeatured();
-  }, []);
+  }, [BASE_URL]);
 
   // Auto-rotate banner slides
   useEffect(() => {

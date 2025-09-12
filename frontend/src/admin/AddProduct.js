@@ -14,7 +14,7 @@ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
     name: "",
     price: "",
     stock: "",
-    category: "Mobiles",
+    category: "T-shirt",
     description: "",
   });
   const [image, setImage] = useState(null);
@@ -131,8 +131,8 @@ const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:9000"
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
             >
-              <option>Mobiles</option>
-              <option>Laptops</option>
+              <option>T-shirt</option>
+              <option>Coolers</option>
               <option>Accessories</option>
             </select>
 
